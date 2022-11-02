@@ -1,0 +1,12 @@
+---
+- name: docker installation
+  hosts: all
+  become: true
+  tasks:
+          - name: docker script transfering
+            ansible.builtin.copy:
+                    src: /home/ubuntu/script1.sh
+                    dest: /home/ubuntu/script1.sh
+                    mode: 777
+          - name: running docker scripting
+            ansible.builtin.shell: bash script1.sh
